@@ -35,23 +35,19 @@ class Pendaftaran extends CI_Controller{
 
 	public function ubah($kode_pendaftaran)
 	{
-		// var_dump($this->Pendaftaran_model->getpdf($kode_pendaftaran));
-		// exit();
 		$data['pdf']=$this->Pendaftaran_model->getpdf($kode_pendaftaran)[0];
 		$data['lomba']=$this->Pendaftaran_model->getpdf($kode_pendaftaran)[1];
+		$data['kode_lomba_peserta']=$this->Pendaftaran_model->getpdf($kode_pendaftaran)[0][0]->kode_lomba;
+		$data['nama_lomba_peserta']=$this->Pendaftaran_model->getpdf($kode_pendaftaran)[0][0]->nama_lomba;
 
 		$this->load->view('ubah_pdf',$data);
 	}
 
 	public function update()
 	{
-		// $pdf['kode_pendaftaran']=$this->input->post('kode_pendaftaran');
-
 		$kode_pendaftaran=$this->input->post('kode_pendaftaran');
 		$pdf['kode_peserta']=$this->input->post('kode_peserta');
 		$pdf['kode_lomba']=$this->input->post('kode_lomba');
-		// var_dump($pdf['nama']=$this->input->post('kode_pendaftaran'));
-		// exit();
 
 		$query=$this->Pendaftaran_model->updatepdf($pdf, $kode_pendaftaran);
 
