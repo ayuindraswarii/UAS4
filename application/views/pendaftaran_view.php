@@ -81,7 +81,7 @@
 						<div class="panel-heading">
 							<h3 class="panel-title" align="center">Data Pendaftaran</h3>
 					        <a href="<?php echo base_url();?>index.php/Pendaftaran/tambah" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Tambah</a> 
-					        <a href="<?php echo base_url();?>index.php/Lomba/tambah" class="btn btn-primary" style="float:right;"><span class="glyphicon glyphicon-print"></span> Cetak</a>
+					        <a href="<?php echo base_url();?>index.php/Pdfpdf" class="btn btn-primary" style="float:right;"><span class="glyphicon glyphicon-print"></span> Cetak</a>
 						</div>
 						<div class="panel-body">
 							<div class="row">
@@ -93,7 +93,7 @@
 					                      <th scope="col">Nama</th>
 					                      <th scope="col">Sekolah</th>
 					                      <th scope="col">Lomba</th>
-					                      <th scope="col">Total</th>
+					                      <th scope="col">Harga</th>
 					                      <th scope="col">Aksi</th>
 					                    </tr>
 					                  </thead>

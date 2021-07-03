@@ -88,6 +88,9 @@
 						              <form method="POST" action="<?php echo base_url();?>index.php/Pendaftaran/update">
 						                <div class="form-group">
 					                  	<label>Peserta</label>
+					                  	<?php foreach ($pdf as $pst):?>
+					                  		<input type="hidden" name="kode_pendaftaran" value="<?= $pst->kode_pendaftaran?>">
+							             <?php endforeach ?>
 							              <select name="kode_peserta" class="form-control">
 								              <?php foreach ($pdf as $pst):?>
 							                  <option value="<?php echo $pst->kode_peserta?>"><?php echo $pst->nama?></option>
@@ -95,9 +98,9 @@
 								          </select>
 						                </div>
 						                <div class="form-group">
-					                  	<label>Lomba</label>
+					                  	<label>Lomba</label> 
 							              <select name="kode_lomba" class="form-control">
-							             <?php foreach ($pdf as $lmb):?>
+							             <?php foreach ($lomba as $lmb):?>
 							                  <option value="<?php echo $lmb->kode_lomba?>"><?php echo $lmb->nama_lomba?></option>
 							              <?php endforeach ?>
 							          	  </select>

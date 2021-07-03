@@ -15,11 +15,11 @@ class Login extends CI_Controller {
 	}
 
   	public function proses(){
-		$this->form_validation->set_rules('username_user', 'Username', 'trim|required',array('required'=>'Username harus diisi'));
-		$this->form_validation->set_rules('password_user', 'Password', 'trim|required',array('required'=>'Password harus diisi'));
+		$this->form_validation->set_rules('username_user', 'Username', 'trim|required');
+		$this->form_validation->set_rules('password_user', 'Password', 'trim|required');
 		if ($this->form_validation->run() == FALSE) {
 				$this->session->set_flashdata('result_login', validation_errors());
-				redirect(base_url('index.php/Login'));
+				redirect(base_url('index.php'));
 			} else {
 				$cek_login=$this->Login_model->get_login();
 				if($cek_login->num_rows()>0){
@@ -36,7 +36,7 @@ class Login extends CI_Controller {
 					redirect(base_url('index.php/Template'));
 				} else {
 					$this->session->set_flashdata('result_login', 'username dan password tidak cocok');
-					redirect(base_url('index.php/Login'));
+					redirect(base_url('index.php'));
 				}
 			}	
 	}
